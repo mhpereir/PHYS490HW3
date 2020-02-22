@@ -28,3 +28,7 @@ A sample `params.json` file is provided in `data/`. It contains,
 - eta        : learning rate of the Boltzmann Machine
 - n_epoch_v  : interval at which diagnosis output is printed
 - batch_size : number of samples generated from MCMC
+
+## Outputs
+
+This script outputs a plot, `loss_function.png`, of the KL divergence loss and a text file, `output.txt`, with the coupling constants of the Hamiltonian. An output directory can be given to the script with `--output_path dir/`.
