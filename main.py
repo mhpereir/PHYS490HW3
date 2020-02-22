@@ -56,8 +56,9 @@ if __name__ == '__main__':
                 except:
                     bm.p_model[key] = 1e-8
         
-        p_mod_array = torch.from_numpy(np.log([bm.p_model[key] for key in data.p_in.keys()]))
-        train_loss.append(loss(p_mod_array, p_in_array).item())
+        p_mod_array = torch.from_numpy(np.array([bm.p_model[key] for key in data.p_in.keys()]))
+        #train_loss.append(loss(np.log(p_mod_array), p_in_array).item())
+        train_loss.append(bm.KL_div(p_mod_array, p_in_array))
         exp_val_model = bm.expected_val(bm.model_data, N)
                 
         bm.update(exp_val_data, exp_val_model)

@@ -64,5 +64,8 @@ class BM():
         self.W = self.W + self.eta*(exp_val_data - exp_val_model)
         
         
+    def KL_div(self, p_m, p_d):
+        return np.sum([p_d[i] * np.log(p_d[i]/p_m[i]) for i in range(0,len(p_d))])
+        
     
     
