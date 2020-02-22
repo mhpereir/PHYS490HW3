@@ -1,0 +1,6 @@
+{
+	"n_epoch"	: 1e2,
+	"eta"		: 0.3,
+	"n_epoch_v"	: 1e1,
+	"batch_size"    : 1000
+}
